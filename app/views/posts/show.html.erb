@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bolg application</title>
+
+
+
+<!-- gooogle fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin="crossorigin">
+<link
+    href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Montserrat&family=Sacramento&display=swap"
+    rel="stylesheet">
+<!-- bootstrap -->
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+    crossorigin="anonymous">
+
+<!-- font awsome -->
+<script src="https://kit.fontawesome.com/33c005a0aa.js" crossorigin="anonymous"></script>
+
+    <!-- including javaScript -->
+    <script>
+      function testing() {
+        document.write("hello ji i am your java script");
+      }
+    </script>
+<!--LINKING CSS -->
+    <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    
+    body {
+      align-items: center;
+      
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
+      height: 100vh;
+    }
+    .intro {
+      text-shadow: 5px;
+      font-weight: 600;
+      color: aquamarine;
+      align-items: center;
+      text-decoration: dotted;
+      text-align: center;
+      padding-top: 50px;
+    }
+    .container
+    {
+     
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* height: 100vh; */
+    }
+    .card {
+      padding: 50px;
+      /* width: auto; */
+      /* height: auto */
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      max-width: 30rem;
+      display:flex;
+    }
+    
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    </style>
+
+
+  </head>
+  <body>
+  <p style="color: green"><%= notice %></p>
+<div class="container">
+<div class="card">
+<%= render @post %>
+
+<br>
+ <button class="btn btn-outline-dark btn-lg ">|| <%= link_to "Edit this post", edit_post_path(@post) %> ||
+ </button>   <button class="btn btn-outline-dark btn-lg "> ||<%= link_to "Back to posts", posts_path %>||
+</button>
+<br>
+<br>
+
+  <%= button_to " * Destroy this post * ", @post, method: :delete %>
+
+</div>
+</div>
+</body>
+</html>
